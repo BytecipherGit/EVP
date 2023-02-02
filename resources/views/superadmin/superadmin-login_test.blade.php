@@ -1,5 +1,5 @@
 @extends('superadmin/layouts.login')
-@section('employee-varification')
+@section('content')
 @section('title','Employee Verification - Login')
 
 <!-- Login Main Container -->

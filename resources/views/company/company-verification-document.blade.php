@@ -1,5 +1,5 @@
 @extends('company/layouts.appcom')
-@section('company-document')
+@section('content')
 @section('title','EVP - Company Verification Document')
 
 <div class="d-flex main-form-part">

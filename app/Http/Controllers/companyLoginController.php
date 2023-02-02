@@ -19,4 +19,8 @@ class companyLoginController extends Controller
              return redirect('company-verification-document');
              }
        }
+
+       function getForgotPassword(){
+        return view('company/forgot-password');
+       }
 }

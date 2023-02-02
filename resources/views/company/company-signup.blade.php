@@ -1,5 +1,5 @@
 @extends('company/layouts.appcom')
-@section('company-signup')
+@section('content')
 @section('title','Employee Verification - Company Login')
 <style>
   .velidation{
@@ -10,6 +10,8 @@
     display: flex;
 }
 </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <div class="d-flex main-form-part">
     <div class="container-fluid">
       <div class="row">                
@@ -98,14 +100,14 @@
               <div class="row">
                 <div class="col-xl-6">
                  <div class="form-group">
-                  <label>Country*</label>
+                  <label for="country">Country*</label>
                   <div class="">
                    
-                    <select  id="country-dd" name="country" value="{{ old('country') }}" class="form-control">
+                    <select  id="country-dropdown" name="country" value="{{ old('country') }}" class="form-control">
                             <option value="">Select Country</option>
-                            @foreach ($countries as $data)
-                            <option value="{{$data->id}}">
-                                {{$data->name}}
+                            @foreach ($countries as $country)
+                            <option value="{{$country->id}}">
+                                {{$country->name}}
                             </option>
                             @endforeach
                         </select>
@@ -116,11 +118,11 @@
 
                 <div class="col-xl-6">
                  <div class="form-group">
-                  <label>State* </label>
+                  <label for="state">State</label>
                   <div class="">
                  
                     <div class="form-group mb-3">
-                        <select id="state-dd" name="state" value="{{ old('state') }}" class="form-control">
+                        <select id="state-dropdown" name="state" value="{{ old('state') }}" class="form-control">
                         <option value="">Select State</option>
                         </select>
                         @error('state') <p class="velidation">{{$message}}</p>@enderror
@@ -129,14 +131,15 @@
                   </div>
                 </div>
               </div>
+
              <div class="row">
                 <div class="col-xl-6">
                  <div class="form-group">
-                  <label>City* </label>
+                  <label for="city">City</label>
                   <div class="">
                
                     <div class="form-group">
-                        <select id="city-dd" name="city" value="{{ old('city') }}" class="form-control">
+                        <select id="city-dropdown" name="city" value="{{ old('city') }}" class="form-control">
                         <option value="">Select City</option>
                         </select>
                         @error('city') <p class="velidation">{{$message}}</p>@enderror
@@ -207,7 +210,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script>
-      window.jQuery || document.write('<script src="../../assets/company2/js/vendor/jquery.min.js"><\/script>')
+      window.jQuery || document.write('<script src="../../assets/company2/js/jquery.min.js"><\script>')
     </script>
     <script src="assets/company2/js/bootstrap.min.js"></script>
     <script>
@@ -224,7 +227,7 @@
     </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
+    {{-- <script>
         $(document).ready(function () {
             $('#country-dd').on('change', function () {
                 var idCountry = this.value;
@@ -268,5 +271,50 @@
                 });
             });
         });
-    </script>
+    </script> --}}
+
+    <script>
+      $(document).ready(function() {
+      $('#country-dropdown').on('change', function() {
+      var country_id = this.value;
+      $("#state-dropdown").html('');
+      $.ajax({
+      url:"{{url('get-states-by-country')}}",
+      type: "POST",
+      data: {
+      country_id: country_id,
+      _token: '{{csrf_token()}}' 
+      },
+      dataType : 'json',
+      success: function(result){
+      $('#state-dropdown').html('<option value="">Select State</option>'); 
+      $.each(result.states,function(key,value){
+      $("#state-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+      });
+      $('#city-dropdown').html('<option value="">Select State First</option>'); 
+      }
+      });
+      });    
+      $('#state-dropdown').on('change', function() {
+      var state_id = this.value;
+      $("#city-dropdown").html('');
+      $.ajax({
+      url:"{{url('get-cities-by-state')}}",
+      type: "POST",
+      data: {
+      state_id: state_id,
+      _token: '{{csrf_token()}}' 
+      },
+      dataType : 'json',
+      success: function(result){
+      $('#city-dropdown').html('<option value="">Select City</option>'); 
+      $.each(result.cities,function(key,value){
+      $("#city-dropdown").append('<option value="'+value.id+'">'+value.name+'</option>');
+      });
+      }
+      });
+      });
+      });
+      </script>
   @endsection
+

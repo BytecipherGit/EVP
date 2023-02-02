@@ -19,10 +19,7 @@
 </head>
 
 <body>
-
-@yield('company-signup')
-@yield('company-login')
-@yield('company-document')
+@yield('content')
 
   <!-- Modal Email verified-->
   <div class="modal fade custom-modal" id="seccess-veri" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static">

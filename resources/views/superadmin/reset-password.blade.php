@@ -1,5 +1,5 @@
 @extends('superadmin/layouts.login')
-@section('reset-password')
+@section('content')
 @section('title','Employee Verification - Reset Password')
 <!-- Main Container -->
 <div class="col-md-6 align-self-center pad-0 form-section">

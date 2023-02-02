@@ -1,5 +1,5 @@
 @extends('superadmin/layouts.app')
-@section('organization')
+@section('content')
 @section('title','EVP - Organization')
  
  <!--- Main Container Start ----->

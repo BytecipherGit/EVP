@@ -1,5 +1,5 @@
 @extends('company/layouts.appcom')
-@section('company-login')
+@section('content')
 @section('title','EVP - Company Login')
 
 <div class="d-flex main-form-part">
@@ -37,7 +37,7 @@
                 <div class="forg-box">
                   <input type="checkbox" id="customRadioInline4" name="customRadioInline"> 
                   <label for="customRadioInline4">Remember me</label>
-                  <a href="company-forgot-password.html">Forgot Password?</a>
+                  <a href="/company-forgot-password">Forgot Password?</a>
                 </div>
               </div>
 

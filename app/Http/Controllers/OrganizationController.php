@@ -26,16 +26,13 @@ class OrganizationController extends Controller
   //     return view('superadmin/organization');
   // }
 
-  public function getIndividual(){
-      return view('superadmin/individual-user');
-  }
+    public function getIndividual(){
+        return view('superadmin/individual-user');
+    }
 
-  public function getOrgDetails(){
-      return view('superadmin/organization-details');
-  }
 
-   public function index()
-    {
+    public function index()
+        {
         $data['countries'] = Country::get(["name", "id"]);
         return view('welcome', $data);
     }

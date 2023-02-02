@@ -9,12 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Superadmin Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
+| Here is where you can register Superadmin routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| contains the "Superadmin" middleware group. Now create something great!
 |
 */
 
@@ -46,20 +46,14 @@ Route::get('/logout', [App\Http\Controllers\SuperadminController::class, 'logout
 Route::get('/organization',[App\Http\Controllers\OrganizationController::class,'getOrganization'])->name('organization');
 
 Route::get('/individual-user',[App\Http\Controllers\OrganizationController::class,'getIndividual']);
-
-// Route::get('/organization-details',[App\Http\Controllers\OrganizationController::class,'getOrgDetails']);
-
-
+  
 Route::get('/forgot-password',[App\Http\Controllers\LoginController::class,'getForgotPassword']);
-
-// Route::post('/forgot',[App\Http\Controllers\SuperadminController::class,'getMail']);
-
-
+ 
 Route::get('/reset-password',[App\Http\Controllers\LoginController::class,'getResetPassword']);
 
 // Route::post('/superlogin',[App\Http\Controllers\SuperadminController::class,'getSuperLogin']);
 
-Route::get('/company-signup',[App\Http\Controllers\companySignupController::class,'getCompanySignup']);
+Route::get('/company-signup',[App\Http\Controllers\companySignupController::class,'index']);
 
 // Route::get('/company-signup',[App\Http\Controllers\companySignupController::class,'countryIndex']);
 
@@ -108,4 +102,23 @@ Route::get('send-email', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+ 
+Route::get('country-state-city', [App\Http\Controllers\companySignupController::class, 'index']);
+Route::post('get-states-by-country', [App\Http\Controllers\companySignupController::class, 'getState']);
+Route::post('get-cities-by-state', [App\Http\Controllers\companySignupController::class, 'getCity']);
+
+/*
+|--------------------------------------------------------------------------
+| Company Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register Company routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "Company" middleware group. Now create something great!
+|
+*/
+
+
+Route::get('/company-forgot-password',[App\Http\Controllers\companyLoginController::class,'getForgotPassword']);
 

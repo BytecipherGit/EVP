@@ -14,7 +14,7 @@
               <div class="form-group">     
                 <div class="effect-box">
                     {{-- <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label> --}}
-                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                   <span><i class="fa fa-lock"></i></span>
                   @error('email')
                   <span class="invalid-feedback" role="alert">
@@ -25,7 +25,7 @@
               </div> 
               <div class="form-group">     
                 <div class="effect-box">
-                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Enter New Password" name="password" required autocomplete="new-password">
                     <span><i class="fa fa-lock"></i></span>
                     @error('password')
                         <span class="invalid-feedback" role="alert">
@@ -38,7 +38,7 @@
               <div class="form-group">          
                 <div class="effect-box">
                   {{-- <input type="password" name="" class="form-control" placeholder="Confirm Password"> --}}
-                  <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                  <input id="password-confirm" type="password" class="form-control" placeholder="Enter Confirm Password" name="password_confirmation" required autocomplete="new-password">
                   <span><i class="fa fa-lock"></i></span>
                 </div>
               </div>             

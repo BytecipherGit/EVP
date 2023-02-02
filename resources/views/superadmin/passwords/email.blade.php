@@ -21,7 +21,7 @@
               <div class="form-group">       
                 <div class="effect-box">
                   {{-- <input type="text" name="email" class="form-control" placeholder="Email Address"> --}}
-                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
+                  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Enter Your Email" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
                   <span><i class="fa fa-envelope-o"></i></span>
                 </div>
                 @error('email')

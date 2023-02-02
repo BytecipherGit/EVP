@@ -94,7 +94,7 @@
               <a class="dropdown-item" href="#">
                 Profile
               </a>
-              <a class="dropdown-item" href="/reset-password">
+              <a class="dropdown-item" href="{{ route('password.request') }}">
                 Change Password
               </a>
               <hr>
@@ -179,10 +179,8 @@
     <!--- Site Bar Menu Close ----->
 
     <!--- Main Container Start ----->
-     @yield('deshboard')
-     @yield('individual-user')
-     @yield('organization')
-     @yield('organization-details')
+    
+     @yield('content')
 
     <!--- Main Container Close ----->
   </div>

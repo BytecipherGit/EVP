@@ -1,5 +1,5 @@
 @extends('superadmin/layouts.login')
-@section('forgot-password')
+@section('content')
 @section('title','Employee Verification - Forgot Password')
 
 <!-- Main Container -->
