@@ -120,5 +120,36 @@ Route::post('get-cities-by-state', [App\Http\Controllers\companySignupController
 */
 
 
-Route::get('/company-forgot-password',[App\Http\Controllers\companyLoginController::class,'getForgotPassword']);
+Route::get('/company-forgot-password',[App\Http\Controllers\Auth\companyLoginController::class,'getForgotPassword']);
+Route::get('forget-password', [App\Http\Controllers\Auth\Forgot_password_controller::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [App\Http\Controllers\Auth\Forgot_password_controller::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+// Route::get('reset-password/{token}', [App\Http\Controllers\Auth\Forgot_password_controller::class, 'showResetPasswordForm'])->name('reset.password.get');
+// Route::post('reset-password', [App\Http\Controllers\Auth\Forgot_password_controller::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
+
+/*
+|--------------------------------------------------------------------------
+| Individual Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register Superadmin routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "Superadmin" middleware group. Now create something great!
+|
+*/
+
+Route::get('/individual-login', function () {
+  return view('indivisule/individual-login');
+});
+
+Route::get('/individual-login-otp', function () {
+  return view('indivisule/individual-login-otp');
+});
+
+Route::get('/individual-login-verified', function () {
+  return view('indivisule/individual-login-verified');
+});
+
+Route::get('/individual-info', function () {
+  return view('indivisule/individual-info');
+});

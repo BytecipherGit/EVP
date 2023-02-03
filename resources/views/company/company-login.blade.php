@@ -37,7 +37,7 @@
                 <div class="forg-box">
                   <input type="checkbox" id="customRadioInline4" name="customRadioInline"> 
                   <label for="customRadioInline4">Remember me</label>
-                  <a href="/company-forgot-password">Forgot Password?</a>
+                  <a href="{{ route('password.requests') }}">Forgot Password?</a>
                 </div>
               </div>
 
@@ -60,3 +60,4 @@
     </script>
     <script src="assets/company2/js/bootstrap.min.js"></script>
 @endscript
+

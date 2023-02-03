@@ -40,7 +40,7 @@
                 <a class="nav-link" href="company-login">Company Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="individual-login.html">Individual Login</a>
+                <a class="nav-link" href="individual-login">Individual Login</a>
               </li>
             </ul>
           </div>            
