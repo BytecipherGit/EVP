@@ -153,3 +153,129 @@ Route::get('/individual-login-verified', function () {
 Route::get('/individual-info', function () {
   return view('indivisule/individual-info');
 });
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register Admin routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "Admin" middleware group. Now create something great!
+|
+*/
+
+Route::get('/admin-index', function () {
+  return view('admin/index');
+});
+
+Route::get('/search-history', function () {
+  return view('admin/search-history');
+});
+
+Route::get('/all-employee', function () {
+  return view('admin/all-employee');
+});
+
+Route::get('/current-employee', function () {
+  return view('admin/current-employee');
+});
+
+Route::get('/onboarding', function () {
+  return view('admin/onboarding');
+});
+
+Route::get('/employee-view-details', function () {
+  return view('admin/employee-view-details');
+});
+
+Route::get('/employee-exit', function () {
+  return view('admin/employee-exit');
+});
+
+Route::get('/notification', function () {
+  return view('admin/notification');
+});
+
+Route::get('/post-employee', function () {
+  return view('admin/post-employee');
+});
+
+Route::get('/post-employee-details', function () {
+  return view('admin/post-employee-details');
+});
+
+Route::get('/invite-employee', function () {
+  return view('admin/invite-employee');
+});
+
+Route::get('/invite-view-employee', function () {
+  return view('admin/invite-view-employee');
+});
+
+Route::get('/reset-password', function () {
+  return view('admin/reset-password');
+});
+
+Route::get('/schedule-for-interview', function () {
+  return view('admin/schedule-for-interview');
+});
+Route::get('/settings',[App\Http\Controllers\companySettingsController::class,'index']);
+
+Route::post('/settings',[App\Http\Controllers\companySettingsController::class,'getprofile']);
+
+Route::get('/interview-video-call', function () {
+  return view('admin/emails/candidate/interview-video-call');
+});
+
+Route::get('/interview-phone-call', function () {
+  return view('admin/emails/candidate/interview-phone-call');
+});
+
+Route::get('/rejected-email', function () {
+  return view('admin/emails/candidate/rejected-email');
+});
+
+Route::get('/schedule-video-interview', function () {
+  return view('admin/web-email/schedule-video-interview');
+});
+
+Route::get('/schedule-phone-interview', function () {
+  return view('admin/web-email/schedule-phone-interview');
+});
+
+Route::get('/reschedule-interview', function () {
+  return view('admin/web-email/reschedule-interview');
+});
+
+Route::get('/suggest-new-time', function () {
+  return view('admin/web-email/suggest-new-time');
+});
+
+Route::get('/interview-request-declined', function () {
+  return view('admin/web-email/interview-request-declined');
+});
+
+Route::get('/decline-interview', function () {
+  return view('admin/web-email/decline-interview');
+});
+
+Route::get('/interview-scheduled', function () {
+  return view('admin/web-email/interview-scheduled');
+});
+
+Route::get('/reschedule-request', function () {
+  return view('admin/web-email/reschedule-request');
+});
+
+Route::get('/invite-email', function () {
+  return view('org-invite/invite-email');
+});
+
+Route::get('/invite-confirm', function () {
+  return view('org-invite/invite-confirm');
+});
+
+Route::get('/basic-info', function () {
+  return view('org-invite/basic-info');
+});

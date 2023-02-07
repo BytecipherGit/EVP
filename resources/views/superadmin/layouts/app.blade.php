@@ -1,12 +1,8 @@
-<?php
-// if(Session::has('user')){
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <title>@yield('title')</title>
+  <title>EVP - Dashboard</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -30,7 +26,7 @@
   <header> 
     <div class="container-fluid">
     <nav class="navbar navbar-expand-md navbar-dark">
-      <a class="navbar-brand" href="/dashboard"><img src="/assets/company/images/logo.png"></a>
+      <a class="navbar-brand" href="dashboard"><img src="/assets/company/images/logo.png"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -94,16 +90,15 @@
               <a class="dropdown-item" href="#">
                 Profile
               </a>
-              <a class="dropdown-item" href="{{ route('password.request') }}">
+              <a class="dropdown-item" href="#">
                 Change Password
               </a>
               <hr>
-            
-              <a class="dropdown-item dropdown-item-no" href="/logout">               
+              <a class="dropdown-item dropdown-item-no" href="#">               
                 Sign out
                 <img src="/assets/company/images/logout-icon.png" class="ml-auto">
               </a>
-           
+
             </div>
           </li>    
         </ul>  
@@ -178,11 +173,10 @@
     </div>
     <!--- Site Bar Menu Close ----->
 
-    <!--- Main Container Start ----->
-    
-     @yield('content')
 
-    <!--- Main Container Close ----->
+
+      @yield('content')
+
   </div>
   <!--- Wapper Close -----> 
    
@@ -195,9 +189,9 @@
     </script>
     <script src="/assets/company/js/bootstrap.min.js"></script>  
 
+
+
 </body>
 
 </html>
-<?php
-// }
-?>
+

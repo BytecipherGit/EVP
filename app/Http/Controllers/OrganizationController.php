@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\CompanyReg;
 use Illuminate\Http\Request;
+use DB;
 
 class OrganizationController extends Controller
 {
@@ -58,6 +59,14 @@ class OrganizationController extends Controller
 
   public function getDetails($id){
     $details=CompanyReg::findOrFail($id);
+   /* $details = DB::table('company_regs')
+            ->join('cities','company_regs.city', '=','cities.id')
+            ->join('states','company_regs.state', '=','states.id')
+            ->select('company_regs.*','cities.*','states.*')->where('company_regs.id',$id)
+            ->get();*/
+
+            // echo'<pre>';
+            // print_r($details->cities); die();
     return view('superadmin/organization-details',compact('details'));
   }
 }

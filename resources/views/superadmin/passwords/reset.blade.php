@@ -44,8 +44,9 @@
               </div>             
               <div class="form-group">
                 {{-- <button><a href="#" data-toggle="modal" data-target="#reset-password">Submit</a></button> --}}
-                <a href="#" data-toggle="modal" data-target="#reset-password"><button type="submit" class="btn btn-primary">{{ __('Reset Password') }}   
-                </button></a>
+                <button type="submit" class="btn btn-primary">{{ __('Reset Password') }} 
+                  {{-- <a href="#" data-toggle="modal" data-target="#reset-password"></a> --}}
+                </button>
               </div>
               <div class="form-group">
                 <h6>© 2022 ByteCipher Pvt. Ltd.</h6>

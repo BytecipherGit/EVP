@@ -1,6 +1,6 @@
 
 @extends('superadmin/layouts.app')
-@section('deshboard')
+@section('content')
 @section('title','EVP - Dashboard')
 <!--- Main Container Start ----->
   <div class="main-container">
@@ -45,7 +45,7 @@
           <div class="bg-section">
             240 <img src="assets/company/images/button-plus-clr.png"> 
           </div>  
-          <a href="#">View</a>              
+          <a href="/organization">View</a>              
         </h6>
       </div>
     </div>

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('designation');
             $table->string('dept');
-            $table->string('address');
+            $table->text('address');
             $table->string('country');
             $table->string('state');
             $table->string('city');
