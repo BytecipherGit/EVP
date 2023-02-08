@@ -220,7 +220,12 @@ Route::get('/reset-password', function () {
 Route::get('/schedule-for-interview', function () {
   return view('admin/schedule-for-interview');
 });
-Route::get('/settings',[App\Http\Controllers\companySettingsController::class,'index']);
+
+// Route::get('/settings', function () {
+//   return view('admin/settings');
+// });
+
+Route::get('/settings',[App\Http\Controllers\companySettingsController::class,'profiledata'])->name('settings');
 
 Route::post('/settings',[App\Http\Controllers\companySettingsController::class,'getprofile']);
 

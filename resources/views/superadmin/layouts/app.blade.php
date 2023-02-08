@@ -94,7 +94,7 @@
                 Change Password
               </a>
               <hr>
-              <a class="dropdown-item dropdown-item-no" href="#">               
+              <a class="dropdown-item dropdown-item-no" href="/logout">               
                 Sign out
                 <img src="/assets/company/images/logout-icon.png" class="ml-auto">
               </a>

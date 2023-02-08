@@ -27,7 +27,7 @@
                             {{ session()->get('message') }}
                         </div>
                     @endif
-                    <form action="" data-toggle="modal" method="post" class="form">
+                    <form action="" method="post" class="form">
                         @csrf
                         <div class="d-flex close-butn">
                             <a href="company-login"><img src="assets/company2/images/back-icon.png"></a>
@@ -196,9 +196,9 @@
                             </div>
                         </div>
 
-
+                        {{-- data-toggle="modal" --}}
                         <div class="form-group">
-                            <button type="submit" name="button" id="but" data-toggle="modal"
+                            <button type="submit" name="button" id="but" 
                                 data-target="#seccess-veri">Sign Up</button>
                         </div>
                         <div class="form-group">
